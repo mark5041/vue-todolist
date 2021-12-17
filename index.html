@@ -20,9 +20,10 @@
             <main class="main">
                 <div class="add-todo">
                     <div class="input">
-                        <input type="text" placeholder="Add Todo">
+                        <input @keyup.enter = "newTodo" v-model="todoNew" type="text" placeholder="Add Todo">
                         <i class="fa-solid fa-circle-plus"></i>
                     </div>
+                    {{todoNew}}
                 </div>
                 <div class="todos">
                     <ul>
@@ -31,7 +32,7 @@
                                 <h3 :class="(todo.status == false) ? '' : 'done' ">{{todo.text}}</h3>
                             </div>
                             <input @change="checkControl(index)" id="check" type="checkbox">
-                            <i class="fa-solid fa-trash"></i>
+                            <i @click="removeTodo(index)" class="fa-solid fa-trash"></i>
                         </li>
                     </ul>
                 </div>

@@ -2,6 +2,7 @@ const app = new Vue(
     {
         el: '#app',
         data: {
+            todoNew: '',
             todos:[
                 {
                     text: 'Pulire il bagno',
@@ -22,7 +23,7 @@ const app = new Vue(
                 {
                     text: 'Fare il bucato',
                     status: false
-                },
+                }
             ]
         },
         methods: {
@@ -31,6 +32,27 @@ const app = new Vue(
                 {
                     let obj = this.todos[index];
                     obj.status = !obj.status;
+                },
+            newTodo:
+                function()
+                {
+                    if(this.todoNew.length > 0)
+                    {
+                        let newObj = {
+                            text: this.todoNew,
+                            status: false
+                        };
+                        this.todos.push(newObj);
+                    }
+                    else
+                    {
+                        this.todoNew = '';
+                    }
+                },
+            removeTodo:
+                function(index)
+                {
+                    this.todos.splice(index, 1);
                 }
         }
     }
