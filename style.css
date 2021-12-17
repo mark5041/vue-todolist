@@ -1,3 +1,53 @@
+html {
+    font-size: 100%;
+}
+
+.my-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo {
+    border: 1px solid black;
+    border-radius: 50px;
+    margin-top: 1em;
+    background: rgb(134,235,255);
+background: linear-gradient(90deg, rgba(134,235,255,1) 0%, rgba(255,255,255,1) 56%, rgba(255,255,255,1) 100%);
+}
+
+.todo-text {
+    display: inline-block;
+    margin-left: 2.5em;
+}
+
+.todo-modify{
+    margin-right: 2.5em;
+}
+
+.fa-trash{
+    margin-left: 0.5em;
+    color: red;
+}
+
+#check {
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#check:checked {
+    background-color: grey;
+    content: "ciao";
+}
+
+
 .done{
     text-decoration: line-through;
+    color: rgb(149, 149, 149);
 }
