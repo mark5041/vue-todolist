@@ -14,15 +14,13 @@
     <div id="app" class="container">
         <div class="inner-container">
             <header class="header">
-                <h5 class="subtitle">Boolean</h2>
                 <h1 class="title">To Do List</h1>
-                <h5 class="date">17/12/2021</h3>
             </header>
             <main class="main">
                 <div class="add-todo">
-                    <div class="input">
-                        <input @keyup.enter = "newTodo" v-model="todoNew" type="text" placeholder="Add Todo">
-                        <i class="fa-solid fa-circle-plus"></i>
+                    <div class="input d-flex justify-content-between align-items-center">
+                        <input @keyup.enter = "newTodo" v-model="todoNew" class="todoInput" type="text" placeholder="Add Todo">
+                        <i @click="newTodo" class="fa-solid fa-circle-plus"></i>
                     </div>
                 </div>
                 <div class="todos">

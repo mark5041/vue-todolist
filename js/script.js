@@ -36,13 +36,25 @@ const app = new Vue(
             newTodo:
                 function()
                 {
+                    const MainObj = this.todos;
+                    let result = false;
                     if(this.todoNew.length > 0)
                     {
-                        let newObj = {
-                            text: this.todoNew,
-                            status: false
-                        };
-                        this.todos.push(newObj);
+                        let newObj = 
+                            {
+                                text: this.todoNew,
+                                status: false
+                            };
+
+                        MainObj.forEach(element => {
+                            if(element.text == newObj.text)
+                                result = true;
+                        });
+
+                        if(result == false)
+                        {
+                            MainObj.push(newObj) 
+                        }
                     }
                     else
                     {
