@@ -28,8 +28,9 @@
                     <ul>
                         <li class="todo"  v-for="(todo, index) in todos">
                             <div class="todo-text">
-                                <h3 class="">{{todo.text}}</h3>
+                                <h3 :class="(todo.status == false) ? '' : 'done' ">{{todo.text}}</h3>
                             </div>
+                            <input @change="checkControl(index)" id="check" type="checkbox">
                             <i class="fa-solid fa-trash"></i>
                         </li>
                     </ul>

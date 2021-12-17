@@ -24,6 +24,14 @@ const app = new Vue(
                     status: false
                 },
             ]
+        },
+        methods: {
+            checkControl: 
+                function(index)
+                {
+                    let obj = this.todos[index];
+                    obj.status = !obj.status;
+                }
         }
     }
 )
